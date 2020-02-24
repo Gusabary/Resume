@@ -477,6 +477,12 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
         }%
+        \ifthenelse{\isundefined{\@homepage}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+        }%
     } \\[\acvHeaderAfterSocialSkip]%
     \ifthenelse{\isundefined{\@quote}}%
       {}%
@@ -490,13 +496,6 @@
     \headersocialstyle{%
       \newbool{isstart}%
       \setbool{isstart}{true}%
-      \ifthenelse{\isundefined{\@homepage}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage(\@homepagedetail)}%
-          \setbool{isstart}{false}%
-        }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
         {%
